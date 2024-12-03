@@ -3,10 +3,13 @@ import streamlit as st
 import cohere
 from PyPDF2 import PdfReader
 from docx import Document
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Initialize Cohere client (use your API key here)
-COHERE_API_KEY = "your-cohere-api-key"  # Replace with your actual API key
-cohere_client = cohere.Client(COHERE_API_KEY)
+cohere_client = cohere.Client(os.environ["COHERE_API_KEY"])
 
 # Streamlit App
 def main():
